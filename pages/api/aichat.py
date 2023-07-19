@@ -5,6 +5,8 @@ from langchain.vectorstores import SupabaseVectorStore
 from langchain.chains import RetrievalQA
 from langchain.chat_models import ChatOpenAI
 from pages.api.client import create_supabase_client
+from dotenv import load_dotenv
+
 
 
 def get_answer(query):
@@ -20,10 +22,14 @@ def get_answer(query):
     document_list = [document for document, _ in matched_docs]
     new_vector_store = SupabaseVectorStore.from_documents(document_list, embeddings, client=supabase)
 
+    load_dotenv()
+
+    OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+    print(OPENAI_API_KEY)
 
     # completion llm
     llm = ChatOpenAI(
-        openai_api_key="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",
+        openai_api_key=OPENAI_API_KEY,
         model_name='gpt-3.5-turbo',
         temperature=0.0
     )

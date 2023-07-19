@@ -29,7 +29,7 @@ def on_click_delete():
         st.warning("Please select a document to delete")
     else:
         for doc in selected_docs:
-            print(doc)
+
             supabase.table('documents').delete().eq('metadata->>source', doc).execute()
             supabase.table('docs').delete().eq('name', doc).execute()
 

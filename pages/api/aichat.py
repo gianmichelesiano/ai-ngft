@@ -10,7 +10,6 @@ import streamlit as st
 
 
 def get_answer(query):
-    print(query)
     supabase = create_supabase_client()
     embeddings = OpenAIEmbeddings()
     

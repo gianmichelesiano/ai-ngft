@@ -20,7 +20,7 @@ def change_status():
 
 
 def save_brain():
-    print(st.warning("Not implemented yet"))
+    st.warning("Not implemented yet")
     st.session_state.list = True
     st.session_state.add = False
 
@@ -48,7 +48,7 @@ if st.session_state.list:
     st.write("List Brain")
     
     response = supabase.table('brain').select('*, brain_2_docs(*)').execute()
-    print(response)
+
     
     list_brain = []
     list_docs = []

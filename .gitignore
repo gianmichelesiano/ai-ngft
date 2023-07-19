@@ -1,5 +1,5 @@
 # Streamlit
+.streamlit/*
 venv/
 .env
 __pycache__/
-.streamlit/

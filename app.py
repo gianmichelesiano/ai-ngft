@@ -17,7 +17,7 @@ if not sessionAuth:
     #st.stop()
 
 with st.sidebar:
-    st.write(f"Welcome {sessionAuth['user']['email']}")
+    st.write(f"Welcome")
     logout_button()
     
 st.write("# Welcome to Ngft AI! 🗒️ to ")

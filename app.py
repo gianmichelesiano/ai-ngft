@@ -7,6 +7,8 @@ st.set_page_config(
     page_icon="🗒️",
 )
 
+print(st.secrets['OPENAI_API_KEY'])
+
 sessionAuth = get_sessio_auth()
 print()
 

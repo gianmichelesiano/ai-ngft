@@ -2,7 +2,7 @@ import requests
 
 from dotenv import load_dotenv
 import os
-
+import streamlit as st
 load_dotenv()
 
 
@@ -14,7 +14,7 @@ def generate_xi_audio(voice_id, texts):
     headers = {
     "Accept": "audio/mpeg",
     "Content-Type": "application/json",
-    "xi-api-key": os.getenv('XI_API_KEY')
+    "xi-api-key": st.secrets['XI_API_KEY']
     }
 
     data = {

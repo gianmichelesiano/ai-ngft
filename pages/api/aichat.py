@@ -6,7 +6,7 @@ from langchain.chains import RetrievalQA
 from langchain.chat_models import ChatOpenAI
 from pages.api.client import create_supabase_client
 from dotenv import load_dotenv
-
+import streamlit as st
 
 
 def get_answer(query):
@@ -24,8 +24,8 @@ def get_answer(query):
 
     load_dotenv()
 
-    OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-    print(OPENAI_API_KEY)
+    OPENAI_API_KEY = st.secrets['OPENAI_API_KEY']
+
 
     # completion llm
     llm = ChatOpenAI(

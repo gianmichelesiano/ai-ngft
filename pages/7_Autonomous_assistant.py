@@ -17,8 +17,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-SERPAPI_API_KEY = os.getenv('SERPAPI_API_KEY')
+OPENAI_API_KEY = st.secrets['OPENAI_API_KEY']
+SERPAPI_API_KEY = st.secrets['SERPAPI_API_KEY']
 
 
 st.sidebar.title("AutoGPT Parameters")
